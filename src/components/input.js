@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Input() {
-  return (
-    <div></div>
-  )
+  return <div></div>;
 }
 
-export default Input
+export default Input;

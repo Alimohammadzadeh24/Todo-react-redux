@@ -4,7 +4,6 @@ import { saveTodo } from "./features/todoSlice";
 import Input from "./components/input";
 
 function App() {
-
   const dispath = useDispatch();
 
   const [input, setInput] = useState("");
@@ -16,14 +15,15 @@ function App() {
   const addTask = () => {
     console.log(`Adding ${input}`);
 
-    dispath(saveTodo({
-      item : input,
-      done : false,
-      id : Date.now()
-    }));
-
-    console.log(localStorage.getItem('state'));
-  }
+    dispath(
+      saveTodo({
+        item: input,
+        done: false,
+        id: Date.now(),
+      })
+    );
+    console.log(localStorage.getItem("state"));
+  };
   return (
     <div className="h-screen w-screen bg-[#3e3cb5] text-white">
       <div className="flex justify-center font-bold h-1/15 p-6">
@@ -38,7 +38,7 @@ function App() {
           required
         />
         <button
-        onClick={addTask}
+          onClick={addTask}
           type="button"
           class="text-white ml-4 mt-2 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
         >
