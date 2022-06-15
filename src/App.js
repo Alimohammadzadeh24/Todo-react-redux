@@ -17,20 +17,22 @@ function App() {
   };
 
   const addTask = () => {
-    // $("#TodoInput").val("");
-    // document.getElementById("TodoInput").value = ""
-    console.log(`Adding ${input}`);
-
-    dispath(
-      saveTodo({
-        item: input,
-        done: false,
-        id: Date.now(),
-      })
-    );
+    $("#TodoInput").val("");
+    if (input === "" || input === undefined || input === null) {
+      console.log("There is nothing to add => Empty")
+    } else {
+      dispath(
+        saveTodo({
+          item: input,
+          done: false,
+          id: Date.now(),
+        })
+      );
+      console.log(`Adding ${input}`);
+    }
   };
   return (
-    <div className="h-screen w-screen bg-[#3e3cb5] text-white">
+    <div className="min-h-screen scrollbar-hide w-screen bg-[#3e3cb5] text-white">
       <div className="flex justify-center font-bold h-1/15 p-6">
         <h1 className="text-4xl">Todo App</h1>
       </div>
@@ -51,6 +53,7 @@ function App() {
           Add!
         </button>
       </div>
+      <section>{}</section>
       <section className="flex justify-center">
         <div className="w-2/5 m-10 p-4 border-solid h-5/6 border-2 border-white rounded-xl text-center">
           <h1 className="text-2xl pb-2 font-bold border-b-2">Todo List</h1>
