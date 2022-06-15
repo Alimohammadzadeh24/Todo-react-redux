@@ -9,16 +9,17 @@ import Swal from 'sweetalert2'
 
 function App() {
   const TodoList = useSelector(selelctTodoList);
-
   const dispath = useDispatch();
-
   const [input, setInput] = useState("");
-  const handleChange = (event) => {
-    setInput(event.target.value);
+
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setInput(e.target.value);
   };
 
   const addTask = () => {
     $("#TodoInput").val("");
+    setInput("");
     if (input === "" || input === undefined || input === null) {
       console.log("There is nothing to add => Empty");
       Swal.fire({
