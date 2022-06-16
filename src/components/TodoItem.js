@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Checkbox from "@mui/material/Checkbox";
 import { useDispatch } from "react-redux/es/exports";
 import { setCheck } from "../features/todoSlice";

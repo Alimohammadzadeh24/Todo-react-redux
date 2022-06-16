@@ -5,7 +5,7 @@ import { selelctTodoList } from "./features/todoSlice";
 import TodoItem from "./components/TodoItem";
 import { saveTodo } from "./features/todoSlice";
 import $ from "jquery";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 function App() {
   const TodoList = useSelector(selelctTodoList);
@@ -13,7 +13,7 @@ function App() {
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     setInput(e.target.value);
   };
 
@@ -23,11 +23,11 @@ function App() {
     if (input === "" || input === undefined || input === null) {
       console.log("There is nothing to add => Empty");
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Your input is Empty!',
-        footer: 'Please add your Task in Input :)'
-      })
+        icon: "error",
+        title: "Oops...",
+        text: "Your input is Empty!",
+        footer: "Please add your Task in Input :)",
+      });
     } else {
       dispath(
         saveTodo({
